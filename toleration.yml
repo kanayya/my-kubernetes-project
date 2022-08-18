@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    type: proxy
+spec:
+  containers:
+    - name: n1
+      image: nginx
+  tolerations:
+    - key: slave2
+      value: manasa
+      effect: NoSchedule
+      opeartor: equal
+...
